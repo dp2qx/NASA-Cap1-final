@@ -1,4 +1,6 @@
 Django==1.11.4
+gunicorn
+django-heroku
 django-widget-tweaks==1.4.1
 requests==2.19.1
 
