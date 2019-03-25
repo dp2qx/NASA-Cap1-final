@@ -14,7 +14,6 @@ def _form_view(request, template_name='bootstrap4.html', form_class=SearchForm):
 
         if form.is_valid():
             queryString = queryStringBuilder(form)
-            #print(queryString)
             #get a JSON response from the NASA site
             response = requests.get(queryString)
             infoFromJson = json.loads(response.text)
@@ -48,6 +47,7 @@ def queryStringBuilder(form):
     return queryString
 
 def htmlStringBuilder(jsonInfo):
+	# Dynamically Build HTML as string
     htmlString = ''
 
 

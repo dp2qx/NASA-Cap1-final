@@ -1,13 +1,13 @@
 from django import forms
 
-
+# search fields
 class SearchForm(forms.Form):
     Query = forms.CharField(max_length=200, required=False)
     Location = forms.CharField(max_length=200,required=False)
     StartYear = forms.CharField(max_length=4,required=False)
     EndYear = forms.CharField(max_length=4,required=False)
 
-
+#cleans input and makes sure at least one field is filled
     def clean(self):
         cleaned_data = super(SearchForm, self).clean()
         Query = cleaned_data.get('Query')
